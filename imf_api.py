@@ -63,4 +63,4 @@ def main():
     
     return result
  
-pd.DataFrame(  main() ).to_excel('disponibilidad.xlsx')
+pd.DataFrame(  main() ).transpose().to_excel('disponibilidad.xlsx')
