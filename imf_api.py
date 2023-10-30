@@ -64,30 +64,3 @@ def main():
     return result
  
 pd.DataFrame(  main() ).to_excel('disponibilidad.xlsx')
-
-# # FPOLM_PA, FIDR_PA
-# result = {p:{} for p in ref_codes.values()}
-# try:
-#     print('ENTRA', 'Australia', 'NGDP_R_SA_XDC')
-#     data = requests.get(f'{url}CompactData/IFS/Q.AU.NGDP_R_SA_XDC.?startPeriod={startdate}&endPeriod={enddate}').json()['CompactData']['DataSet']['Series']
-
-#     df = pd.DataFrame([[obs.get('@TIME_PERIOD'), obs.get('@OBS_VALUE')]for obs in data['Obs']], columns=['per', 'val'])
-#     print('0')
-#     dir = f'IFS/Australia'
-#     if not os.path.exists(dir):
-#         os.makedirs(dir)
-    
-#     df.to_excel(f'{dir}/{c}.xlsx')
-    
-#     print('1')
-#     result['Australia']['NGDP_R_SA_XDC'] = f"{(data['Obs'][0]['@TIME_PERIOD']).split('-')[0]} - {(data['Obs'][-1]['@TIME_PERIOD']).split('-')[0]}"
-#     print('Llega aca')
-
-#     print( f"SI hay datos de {c} desde {data['Obs'][0]['@TIME_PERIOD']} hasta {data['Obs'][-1]['@TIME_PERIOD']}" )
-#     print('SALE', 'Australia', 'NGDP_R_SA_XDC')
-#     print(result)
-# except:
-#     result['Australia']['NGDP_R_SA_XDC'] = None
-#     print(f'NO hay datos de {c}')
-
-# print('final', result)
